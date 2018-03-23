@@ -1,0 +1,66 @@
+﻿@model InventoryManagement.Models.Patient
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RightEyeParam_1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RightEyeParam_1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RightEyeParam_2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RightEyeParam_2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RightEyeParam_3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RightEyeParam_3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeftEyeParam_1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LeftEyeParam_1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeftEyeParam_2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LeftEyeParam_2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LeftEyeParam_3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LeftEyeParam_3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DesesaseName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DesesaseName.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<InventoryManagement.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RightEyeParam_1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RightEyeParam_2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RightEyeParam_3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LeftEyeParam_1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LeftEyeParam_2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LeftEyeParam_3)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DesesaseName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightEyeParam_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightEyeParam_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RightEyeParam_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftEyeParam_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftEyeParam_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeftEyeParam_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesesaseName.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

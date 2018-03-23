@@ -4,12 +4,7 @@ using Microsoft.EntityFrameworkCore;
 public class InventoryManagementDbContext : DbContext
 {
     //Table List
-    public DbSet<Employee> Employies { get; set; }
-    public DbSet<ProductCategory> ProductCategorys { get; set; }
-    public DbSet<ProductType> ProductTypes { get; set; }
-    public DbSet<Product> Products { get; set; }
-    public DbSet<Entry> Entries { get; set; }
-    public DbSet<Exit> Exits { get; set; }
+    //public DbSet<Employee> Employies { get; set; }
     //Table List End
 
     public InventoryManagementDbContext(DbContextOptions<InventoryManagementDbContext> options)
@@ -19,30 +14,16 @@ public class InventoryManagementDbContext : DbContext
     //Fluent API to make Composite Key
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Desesase>()
+            .HasIndex(u => u.Name)
+            .IsUnique();
+
         //Key automatic generation configuration
+        /*
         modelBuilder.Entity<Employee>()
             .Property(b => b.Id)
             .ValueGeneratedOnAdd();
-
-        modelBuilder.Entity<ProductCategory>()
-            .Property(b => b.Id)
-            .ValueGeneratedOnAdd();
-
-        modelBuilder.Entity<ProductType>()
-            .Property(b => b.Id)
-            .ValueGeneratedOnAdd();
-
-        modelBuilder.Entity<Product>()
-            .Property(b => b.Id)
-            .ValueGeneratedOnAdd();
-
-        modelBuilder.Entity<Entry>()
-            .Property(b => b.Id)
-            .ValueGeneratedOnAdd();
-
-        modelBuilder.Entity<Exit>()
-            .Property(b => b.Id)
-            .ValueGeneratedOnAdd();
+        */
 
         /*-------------------------------------------*/
 
@@ -65,4 +46,13 @@ public class InventoryManagementDbContext : DbContext
             });
         */
     }
+
+    //Fluent API to make Composite Key
+    public DbSet<InventoryManagement.Models.Patient> Patient { get; set; }
+
+    //Fluent API to make Composite Key
+    public DbSet<InventoryManagement.Models.Desesase> Desesase { get; set; }
+
+    //Fluent API to make Composite Key
+    public DbSet<InventoryManagement.Models.Doctor> Doctor { get; set; }
 }
